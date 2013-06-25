@@ -1,5 +1,6 @@
 require 'yelpster'
-# require 'yelp'
+require 'awesome_print'
+
 
 
 puts "What Kind of food do you want?"
@@ -12,16 +13,26 @@ client = Yelp::Client.new()
 request = Yelp::V2::Search::Request::Location.new(
             :term => "#{food}",
             :zipcode => "#{zip}",
+            :radius_filter => 10000,
+            :deals_filter => true,
+           
+
+
+
             :consumer_key => 'yPWBjYp_MlDc3m9e3Zjhog',
             :consumer_secret => 'JUxpieZIIXRGGIEviA-fJPEvBLk',
             :token => 'Reg5_UU-fWGUeSkNwbAEd92h11silZ8G',
             :token_secret => '17OofBrcIHUFqkN_tFOErPVqStI')
  response = client.search(request)
- 
- puts response
 
-				
 
+ # response["businesses"].each do |rating|
+ # 	puts ap rating["name"]
+ # end
+ # [count] #["rating"]
+# puts ap response["businesses"][0]["name"]
+# count +=1				
+# end 
 
 
 
