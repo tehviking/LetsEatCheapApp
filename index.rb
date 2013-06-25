@@ -19,10 +19,10 @@ request = Yelp::V2::Search::Request::Location.new(
 
 
 
-            :consumer_key => 'yPWBjYp_MlDc3m9e3Zjhog',
-            :consumer_secret => 'JUxpieZIIXRGGIEviA-fJPEvBLk',
-            :token => 'Reg5_UU-fWGUeSkNwbAEd92h11silZ8G',
-            :token_secret => '17OofBrcIHUFqkN_tFOErPVqStI')
+            :consumer_key => ENV['CONSUMER_KEY'],
+            :consumer_secret => ENV['CONSUMER_SECRET'],
+            :token => ENV['TOKEN'],
+            :token_secret => ENV['TOKEN_SECRET'])
  response = client.search(request)
 
 
