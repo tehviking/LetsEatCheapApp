@@ -13,8 +13,8 @@ client = Yelp::Client.new()
 request = Yelp::V2::Search::Request::Location.new(
             :term => "#{food}",
             :zipcode => "#{zip}",
-            :radius_filter => 10000,
-            # :deals_filter => true,
+            :radius_filter => 1000,
+            :deals_filter => true,
            
 
 
@@ -28,22 +28,13 @@ request = Yelp::V2::Search::Request::Location.new(
 
  response["businesses"].each do |rating|
  	puts ap rating["name"]
+ 	puts ap rating['display_phone']
  	puts ap rating['location']['display_address'][0]
  	puts ap rating['location']['display_address'][1]
  	puts ap rating['location']['display_address'][2]
  	puts ap rating['rating']
- 	puts ap rating['display_phone']
+ 	
 end
-
-
- # [count] #["rating"]
-# puts ap response["businesses"][0]["name"]
-# count +=1				
-# end 
-
-
-
-
 
 
 
