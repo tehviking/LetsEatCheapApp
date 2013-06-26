@@ -23,12 +23,12 @@ class RestaurantList
   
   def self.print_response_details(response)
     response["businesses"].each do |rating|
-      puts ap rating["name"]
-      puts ap rating['display_phone']
-      puts ap rating['location']['display_address'][0]
-      puts ap rating['location']['display_address'][1]
-      puts ap rating['location']['display_address'][2]
-      puts ap rating['rating']
+      ap rating["name"]
+      ap rating['display_phone']
+      ap rating['location']['display_address'][0]
+      ap rating['location']['display_address'][1]
+      ap rating['location']['display_address'][2]
+      ap rating['rating']
     end
   end
 end

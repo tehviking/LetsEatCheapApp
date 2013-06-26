@@ -8,4 +8,4 @@ my_zip = gets.chomp
 
 list = RestaurantList.get_food_by_zip(my_food, my_zip)
 
-ap RestaurantList.print_response_details(list)
+RestaurantList.print_response_details(list)
